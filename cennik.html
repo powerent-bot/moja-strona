@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cennik · Twoja Marka Powerbank</title>
+  <meta name="description" content="Cennik wypożyczeń — 4,99 zł za każdą rozpoczętą godzinę." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔋</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><span class="logo"></span> Twoja Marka Powerbank</a>
+    <nav class="nav">
+      <a href="index.html" class="">Start</a>
+      <a href="cennik.html" class="active">Cennik</a>
+      <a href="faq.html" class="">FAQ</a>
+      <a href="kontakt.html" class="">Kontakt</a>
+      <a href="regulamin-pl.html" class="">Regulamin</a>
+      <a href="polityka-prywatnosci-pl.html" class="">Polityka</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+
+<section class="card">
+  <h1>Cennik</h1>
+  <table>
+    <thead><tr><th>Usługa</th><th>Stawka</th><th>Zasady</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Wypożyczenie powerbanku</td>
+        <td class="price-x">4,99 zł / godz.</td>
+        <td>Naliczanie za każdą rozpoczętą godzinę.</td>
+      </tr>
+      <tr>
+        <td>Blokada środków (preautoryzacja)</td>
+        <td>30,00 zł</td>
+        <td>Przyłożenie karty do terminala powoduje blokadę. Po zwrocie oddajemy różnicę.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="notice">Zwolnienie blokady może zależeć od banku użytkownika i trwać od kilku minut do kilku dni roboczych.</p>
+</section>
+
+</main>
+<footer class="container">
+  <div>© <span id="year"></span> Twoja Marka Powerbank. · <a href="regulamin-pl.html">Regulamin</a> · <a href="polityka-prywatnosci-pl.html">Polityka prywatności</a></div>
+  <div class="small">Wersja szablonu: 2025-11-07</div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>

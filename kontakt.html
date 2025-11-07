@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt · Twoja Marka Powerbank</title>
+  <meta name="description" content="Skontaktuj się z nami" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔋</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><span class="logo"></span> Twoja Marka Powerbank</a>
+    <nav class="nav">
+      <a href="index.html" class="">Start</a>
+      <a href="cennik.html" class="">Cennik</a>
+      <a href="faq.html" class="">FAQ</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+      <a href="regulamin-pl.html" class="">Regulamin</a>
+      <a href="polityka-prywatnosci-pl.html" class="">Polityka</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+
+<section class="card">
+  <h1>Kontakt</h1>
+  <p>Masz pytania lub potrzebujesz wsparcia? Napisz do nas albo skorzystaj z formularza.</p>
+  <p>E‑mail: <a href="mailto:kontakt@twojadomena.pl">kontakt@twojadomena.pl</a><br>Telefon: <a href="tel:+48000000000">+48 000 000 000</a></p>
+</section>
+
+<section class="card">
+  <h2>Formularz kontaktowy</h2>
+  <form action="https://formspree.io/f/XXXXYYYY" method="POST">
+    <label>Imię <input name="name" required></label>
+    <label>Adres e‑mail <input type="email" name="_replyto" required></label>
+    <label>Wiadomość <textarea name="message" rows="6" required></textarea></label>
+    <div class="small"><label><input type="checkbox" required> Akceptuję <a href="polityka-prywatnosci-pl.html">Politykę prywatności</a> i wyrażam zgodę na kontakt.</label></div>
+    <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off" />
+    <button class="button" type="submit">Wyślij</button>
+  </form>
+</section>
+
+</main>
+<footer class="container">
+  <div>© <span id="year"></span> Twoja Marka Powerbank. · <a href="regulamin-pl.html">Regulamin</a> · <a href="polityka-prywatnosci-pl.html">Polityka prywatności</a></div>
+  <div class="small">Wersja szablonu: 2025-11-07</div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
