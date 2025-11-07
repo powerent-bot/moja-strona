@@ -58,3 +58,19 @@ th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left}
 
 /* opcjonalnie wyłącz automatyczne dzielenie wyrazów */
 .hyphens-none { hyphens: none; }
+.logo-img {
+  height: 36px;
+  width: auto;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(45,212,191,.25);
+}
+.brand span {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: .3px;
+  color: var(--text);
+}
+.brand:hover span {
+  color: var(--accent);
+}
