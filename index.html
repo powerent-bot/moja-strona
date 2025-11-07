@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Start · Twoja Marka</title>
+  <meta name="description" content="Prosta strona z Regulaminem, FAQ, Polityką prywatności i Kontaktem" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="container">
+  <a class="brand" href="index.html">Twoja Marka</a>
+  <nav class="nav">
+    <a href="index.html">Start</a>
+    <a href="regulamin.html">Regulamin</a>
+    <a href="faq.html">FAQ</a>
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+<main class="container content">
+
+  <section class="grid">
+    <div class="card">
+      <h1>Witaj na stronie</h1>
+      <p>Tu krótko opisz urządzenie/usługę oraz cel strony. Znajdziesz tu regulamin użytkowania, odpowiedzi na najczęstsze pytania i dane kontaktowe.</p>
+      <p><a class="button" href="kontakt.html">Skontaktuj się</a></p>
+    </div>
+    <div class="card">
+      <h2>Co tu jest?</h2>
+      <ul>
+        <li><a href="regulamin.html">Regulamin urządzenia</a></li>
+        <li><a href="faq.html">Najczęstsze pytania (FAQ)</a></li>
+        <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <p class="notice">Ten szablon jest gotowy do publikacji na GitHub Pages.</p>
+    </div>
+  </section>
+
+</main>
+<footer class="container footer">
+  <p>© <span id="year"></span> Twoja Marka. Wszelkie prawa zastrzeżone.</p>
+</footer>
+<script>
+  // aktywne menu
+  const path = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('nav a').forEach(a => {
+    if(a.getAttribute('href') === path) a.classList.add('active');
+  });
+  // rok w stopce
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

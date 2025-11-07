@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ · Twoja Marka</title>
+  <meta name="description" content="Najczęściej zadawane pytania" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="container">
+  <a class="brand" href="index.html">Twoja Marka</a>
+  <nav class="nav">
+    <a href="index.html">Start</a>
+    <a href="regulamin.html">Regulamin</a>
+    <a href="faq.html">FAQ</a>
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+<main class="container content">
+
+  <section class="card">
+    <h1>FAQ — Najczęściej zadawane pytania</h1>
+    <details>
+      <summary>Jak uruchomić urządzenie?</summary>
+      <p>Podłącz urządzenie do zasilania, wciśnij przycisk START i postępuj zgodnie z instrukcjami na ekranie.</p>
+    </details>
+    <details>
+      <summary>Jaki jest czas realizacji/odpowiedzi?</summary>
+      <p>Odpowiadamy zwykle w ciągu 1–2 dni roboczych.</p>
+    </details>
+    <details>
+      <summary>Jak zgłosić usterkę lub reklamację?</summary>
+      <p>Napisz na <a href="mailto:kontakt@twojadomena.pl">kontakt@twojadomena.pl</a> i opisz problem.</p>
+    </details>
+    <details>
+      <summary>Czy moje dane są bezpieczne?</summary>
+      <p>Tak. Gromadzimy tylko dane konieczne do kontaktu. Szczegóły w <a href="polityka-prywatnosci.html">Polityce prywatności</a>.</p>
+    </details>
+  </section>
+
+</main>
+<footer class="container footer">
+  <p>© <span id="year"></span> Twoja Marka. Wszelkie prawa zastrzeżone.</p>
+</footer>
+<script>
+  // aktywne menu
+  const path = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('nav a').forEach(a => {
+    if(a.getAttribute('href') === path) a.classList.add('active');
+  });
+  // rok w stopce
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
