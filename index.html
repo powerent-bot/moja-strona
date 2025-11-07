@@ -3,120 +3,194 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Start · Twoja Marka Powerbank</title>
-  <meta name="description" content="Wypożyczalnia powerbanków — 12-slotowa stacja, proste zasady, płatność kartą." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔋</text></svg>">
-  <link rel="stylesheet" href="style.css">
+  <title>Wypożycz powerbank w 10&nbsp;sekund · Powerent</title>
+  <meta name="description" content="Powerent – 12-slotowa stacja powerbanków. Wypożycz w 10 sekund. Płatność kartą lub NFC. 4,99 zł / godz. Blokada 30 zł – po zwrocie oddajemy różnicę." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <style>
+    :root{
+      --bg:#080b10;
+      --panel:#10131a;
+      --card:#111621;
+      --border:#1e2a3b;
+      --text:#e6e9ef;
+      --muted:#a3acc2;
+      --accent:#2dd4bf; /* turkus – energia */
+      --accent2:#14b8a6; /* ciemniejszy dla hover */
+      --accent-contrast:#041412;
+      --success:#22c55e;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+      background:radial-gradient(1200px 600px at 50% -10%,rgba(45,212,191,.15),transparent 60%),var(--bg);
+      color:var(--text);
+      font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Noto Sans",sans-serif;
+    }
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--accent);text-decoration:none;transition:.2s}
+    a:hover{color:var(--accent2)}
+    .container{max-width:1100px;margin:0 auto;padding:16px}
+    header{
+      position:sticky;top:0;z-index:30;
+      background:linear-gradient(to bottom,rgba(10,11,16,.9),rgba(10,11,16,.6));
+      backdrop-filter:saturate(160%) blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .brand .logo{
+      width:28px;height:28px;border-radius:7px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 6px 24px rgba(45,212,191,.35);
+    }
+    .nav{display:flex;gap:10px;flex-wrap:wrap}
+    .nav a{
+      padding:8px 12px;border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(16,19,26,.7);
+    }
+    .nav a.active{background:var(--accent);color:var(--accent-contrast);border-color:transparent}
+    main{padding:28px 16px}
+    .hero{
+      display:grid;grid-template-columns:1fr;gap:20px;align-items:center;margin:18px 0 8px;
+    }
+    .hero .copy h1{font-size:42px;line-height:1.1;margin:0 0 10px}
+    .hero .copy p{color:var(--muted);margin:0 0 16px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+    .badge{font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:#0b111c}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .button{
+      display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid var(--border);
+      background:var(--accent);color:var(--accent-contrast);
+      font-weight:700;letter-spacing:.2px;transition:.25s;
+    }
+    .button:hover{background:var(--accent2)}
+    .button.secondary{background:transparent;color:var(--text)}
+    .section{margin:24px 0}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:20px;
+      box-shadow:0 8px 28px rgba(0,0,0,.25);
+      transition:.3s;
+    }
+    .card:hover{transform:translateY(-3px);border-color:var(--accent2)}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:860px){
+      .hero{grid-template-columns:1.1fr .9fr}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .grid-2{grid-template-columns:repeat(2,1fr)}
+    }
+    .kv{position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(45,212,191,.18),transparent),#08101a;border:1px solid var(--border)}
+    .kv img{mix-blend-mode:screen;opacity:.95}
+    .list{margin:0;padding:0;list-style:none}
+    .list li{display:flex;gap:10px;align-items:flex-start;margin:8px 0;line-height:1.55}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--success);margin-top:10px;flex:0 0 8px}
+    .notice{font-size:14px;color:var(--muted)}
+    footer{border-top:1px solid var(--border);padding:18px 0;margin-top:26px;color:var(--muted)}
+    .nowrap{white-space:nowrap}
+    .hyphens-none{hyphens:none}
+  </style>
 </head>
 <body>
-<header>
-  <div class="container header-inner">
-    <a class="brand" href="index.html"><span class="logo"></span> Twoja Marka Powerbank</a>
-    <nav class="nav">
-      <a href="index.html" class="active">Start</a>
-      <a href="cennik.html" class="">Cennik</a>
-      <a href="faq.html" class="">FAQ</a>
-      <a href="kontakt.html" class="">Kontakt</a>
-      <a href="regulamin-pl.html" class="">Regulamin</a>
-      <a href="polityka-prywatnosci-pl.html" class="">Polityka</a>
-    </nav>
-  </div>
-</header>
-<main class="container">
-
-<section class="hero">
-  <div class="copy">
-    <h1>Wypożycz powerbank w 10 sekund</h1>
-    <p>12‑slotowa stacja z płatnością kartą. Stawka <strong>4,99 zł / godz.</strong> Pobieramy blokadę <strong>30 zł</strong> — po zwrocie oddajemy różnicę.</p>
-    <div class="badges">
-      <span class="badge">12 slotów</span>
-      <span class="badge">Płatność kartą/NFC</span>
-      <span class="badge">USB‑C / Lightning / Micro‑USB</span>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="logo"></span> Powerent</a>
+      <nav class="nav">
+        <a href="index.html">Start</a>
+        <a href="cennik.html">Cennik</a>
+        <a href="faq.html">FAQ</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="regulamin-pl.html">Regulamin</a>
+        <a href="polityka-prywatnosci-pl.html">Polityka</a>
+      </nav>
     </div>
-    <div class="cta">
-      <a class="button" href="cennik.html">Sprawdź cennik</a>
-      <a class="button secondary" href="faq.html">Jak to działa?</a>
-    </div>
-    <p class="notice">Zdjęcie urządzenia producenta — Bajie Charging (model 12-slotowy).</p>
-  </div>
-  <div class="kv">
-    <img alt="12-slotowa stacja powerbanków" src="https://s.alicdn.com/%40sc04/kf/Haefdedbdafdd477485ed8ec4f54dcb92r.jpg_720x720q50.jpg">
-  </div>
-</section>
+  </header>
 
-<section class="section grid grid-3">
-  <div class="card">
-    <h2>1) Przyłóż kartę</h2>
-    <ul class="list hyphens-none">
-      <li>
-        <span class="dot"></span>
-        Blokujemy <span class="nowrap"><strong>30&nbsp;zł</strong></span> jako depozyt wstępny.
-      </li>
-      <li>
-        <span class="dot"></span>
-        Otwiera się slot — wyjmij powerbank.
-      </li>
-    </ul>
-  </div>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="copy">
+        <h1>Wypożycz powerbank w 10&nbsp;sekund</h1>
+        <p>12-slotowa stacja z płatnością kartą. Stawka <span class="nowrap"><strong>4,99&nbsp;zł&nbsp;/&nbsp;godz.</strong></span>. Blokujemy <span class="nowrap"><strong>30&nbsp;zł</strong></span> – po zwrocie oddajemy różnicę.</p>
+        <div class="badges">
+          <span class="badge">12 slotów</span>
+          <span class="badge">Płatność kartą / NFC</span>
+          <span class="badge">USB-C / Lightning / Micro-USB</span>
+        </div>
+        <div class="cta">
+          <a class="button" href="cennik.html">Sprawdź cennik</a>
+          <a class="button secondary" href="faq.html">Jak to działa?</a>
+        </div>
+        <p class="notice">Zdjęcie przykładowe 12-slotowej stacji producenta.</p>
+      </div>
+      <div class="kv">
+        <img alt="12-slotowa stacja powerbanków" src="https://s.alicdn.com/%40sc04/kf/Haefdedbdafdd477485ed8ec4f54dcb92r.jpg_720x720q50.jpg">
+      </div>
+    </section>
 
-  <div class="card">
-    <h2>2) Korzystaj</h2>
-    <ul class="list hyphens-none">
-      <li>
-        <span class="dot"></span>
-        Stawka <span class="nowrap"><strong>4,99&nbsp;zł&nbsp;/&nbsp;godz.</strong></span> naliczana
-        za każdą rozpoczętą godzinę.
-      </li>
-      <li>
-        <span class="dot"></span>
-        Ładowanie: USB-C / Lightning / Micro-USB.
-      </li>
-    </ul>
-  </div>
+    <!-- JAK TO DZIAŁA -->
+    <section class="section grid grid-3">
+      <div class="card">
+        <h2>1) Przyłóż kartę</h2>
+        <ul class="list hyphens-none">
+          <li><span class="dot"></span>Blokujemy <span class="nowrap"><strong>30&nbsp;zł</strong></span> jako depozyt wstępny.</li>
+          <li><span class="dot"></span>Otwiera się slot — wyjmij powerbank.</li>
+        </ul>
+      </div>
 
-  <div class="card">
-    <h2>3) Zwróć w stacji</h2>
-    <ul class="list hyphens-none">
-      <li>
-        <span class="dot"></span>
-        Włóż powerbank do wolnego slotu — transakcja się rozlicza.
-      </li>
-      <li>
-        <span class="dot"></span>
-        Oddajemy różnicę z blokady <span class="nowrap"><strong>30&nbsp;zł</strong></span>
-        (czas zwolnienia zależy od banku).
-      </li>
-    </ul>
-  </div>
-</section>
+      <div class="card">
+        <h2>2) Korzystaj</h2>
+        <ul class="list hyphens-none">
+          <li><span class="dot"></span>Stawka <span class="nowrap"><strong>4,99&nbsp;zł&nbsp;/&nbsp;godz.</strong></span> naliczana za każdą rozpoczętą godzinę.</li>
+          <li><span class="dot"></span>Ładowanie: USB-C / Lightning / Micro-USB.</li>
+        </ul>
+      </div>
 
+      <div class="card">
+        <h2>3) Zwróć w stacji</h2>
+        <ul class="list hyphens-none">
+          <li><span class="dot"></span>Włóż powerbank do wolnego slotu — transakcja się rozlicza.</li>
+          <li><span class="dot"></span>Oddajemy różnicę z blokady <span class="nowrap"><strong>30&nbsp;zł</strong></span> (czas zwolnienia zależy od banku).</li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- USP + SPECYFIKACJA -->
+    <section class="section grid grid-2">
+      <div class="card">
+        <h2>Dlaczego Powerent?</h2>
+        <ul class="list">
+          <li><span class="dot"></span>Proste zasady — jedna stawka godzinowa.</li>
+          <li><span class="dot"></span>Bez aplikacji — płatność kartą lub NFC.</li>
+          <li><span class="dot"></span>Sprzęt sprawdzonego producenta.</li>
+        </ul>
+      </div>
 
-<section class="section grid grid-2">
-  <div class="card">
-    <h2>Dlaczego my?</h2>
-    <ul class="list">
-      <li><span class="dot"></span>Proste zasady cenowe — 1 stawka godzinowa.</li>
-      <li><span class="dot"></span>Bez aplikacji — płatność kartą/NFC.</li>
-      <li><span class="dot"></span>Sprzęt sprawdzonego producenta.</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2>Specyfikacja w skrócie</h2>
-    <ul class="list">
-      <li><span class="dot"></span>12 slotów, zasilanie stacji 60W (max).</li>
-      <li><span class="dot"></span>Obsługiwane kable: USB‑C / Lightning / Micro‑USB.</li>
-      <li><span class="dot"></span>Tryb POS: karta / NFC.</li>
-    </ul>
-    <p class="notice">Parametry mogą się różnić w zależności od serii i konfiguracji.</p>
-  </div>
-</section>
+      <div class="card">
+        <h2>Specyfikacja w skrócie</h2>
+        <ul class="list">
+          <li><span class="dot"></span>12 slotów, zasilanie stacji 60&nbsp;W (max).</li>
+          <li><span class="dot"></span>Obsługiwane kable: USB-C / Lightning / Micro-USB.</li>
+          <li><span class="dot"></span>Tryb POS: karta / NFC.</li>
+        </ul>
+        <p class="notice">Parametry mogą się różnić w zależności od serii i konfiguracji.</p>
+      </div>
+    </section>
+  </main>
 
-</main>
-<footer class="container">
-  <div>© <span id="year"></span> Twoja Marka Powerbank. · <a href="regulamin-pl.html">Regulamin</a> · <a href="polityka-prywatnosci-pl.html">Polityka prywatności</a></div>
-  <div class="small">Wersja szablonu: 2025-11-07</div>
-</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <footer class="container">
+    <div>© <span id="year"></span> Powerent · <a href="regulamin-pl.html">Regulamin</a> · <a href="polityka-prywatnosci-pl.html">Polityka prywatności</a></div>
+  </footer>
+
+  <script>
+    (function(){
+      const path = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.nav a').forEach(a=>{
+        if(a.getAttribute('href')===path)a.classList.add('active');
+      });
+      document.getElementById('year').textContent=new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
