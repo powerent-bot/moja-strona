@@ -50,3 +50,11 @@ th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left}
 .lang-switch{display:flex;gap:8px;margin:6px 0 0}
 .lang-switch a{font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:#0b111c}
 .small{font-size:13px;color:var(--muted)}
+/* zapobiega łamaniu 30 zł, 4,99 zł / godz. itp. */
+.nowrap { white-space: nowrap; }
+
+/* lepsze prowadzenie wierszy w punktach */
+.list li { line-height: 1.55; }
+
+/* opcjonalnie wyłącz automatyczne dzielenie wyrazów */
+.hyphens-none { hyphens: none; }
