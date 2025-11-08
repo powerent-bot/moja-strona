@@ -1,0 +1,8 @@
+# w katalogu repo
+git rm -r .
+# ewentualnie usuń pliki ukryte, jeśli są potrzebne
+# zostaw .git, oczywiście
+
+# następnie utwórz trzy pliki:
+# index.html, styles.css, script.js
+
